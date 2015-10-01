@@ -435,7 +435,7 @@ XmlRpcResponse.prototype.addValueToParent = function(value, parent) {
  * @return <code>String</code> with an ISO8601 date.
  */
 Date.prototype.toIso8601 = function() {
-	year = this.getYear();
+	year = this.getFullYear();
 	if (year < 1900)
 		year += 1900;
 	month = this.getMonth() + 1;
@@ -445,7 +445,7 @@ Date.prototype.toIso8601 = function() {
 	if (day < 10)
 		day = "0" + day;
 	time = this.toTimeString().substr(0, 8);
-	return year + month + day + "T" + time;
+	return "" + year + month + day + "T" + time;
 };
 
 /**
